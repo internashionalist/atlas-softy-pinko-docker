@@ -1,9 +1,9 @@
 version: '3.8'
 services:
-  back-end-1:
+  back-end:
     image: softy-pinko:task5-back-end
-    ports:
-      - "5253:5252"
+    expose:
+      - "5252"
     build: 
       context: ./back-end
       dockerfile: Dockerfile
