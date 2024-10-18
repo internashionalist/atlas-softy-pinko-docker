@@ -1,0 +1,18 @@
+version: '3'
+services:
+  back-end:
+    ports:
+      - "5252:5252"
+    build: 
+      context: ./back-end
+      dockerfile: Dockerfile
+
+  front-end:
+    image: nginx:latest
+    ports:
+      - "9000:9000"
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    depends_on:
+      - back-end
